@@ -1,4 +1,5 @@
 #!/bin/bash
 set -ex
+curl -sL https://raw.githubusercontent.com/jupyter/docker-stacks/main/images/base-notebook/docker_healthcheck.py -o ~/docker_healthcheck.py
 pip install git+https://github.com/yacchin1205/jupyterlite-pyodide-server.git
 jupyterlite-pyodide-server-build
