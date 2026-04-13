@@ -4,6 +4,8 @@
 
 set -ex
 
+export JUPYTERLITE_OUTPUT_DIR=/tmp/jupyterlite
+
 # The _log function is used for everything this script wants to log. It will
 # always log errors and warnings, but can be silenced for other messages
 # by setting JUPYTER_DOCKER_STACKS_QUIET environment variable.
