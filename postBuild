@@ -1,0 +1,4 @@
+#!/bin/bash
+set -ex
+pip install git+https://github.com/yacchin1205/jupyterlite-pyodide-server.git
+jupyterlite-pyodide-server-build
