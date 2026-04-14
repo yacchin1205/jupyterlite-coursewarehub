@@ -2,7 +2,7 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 
-set -ex
+set -e
 
 export JUPYTERLITE_OUTPUT_DIR=/tmp/jupyterlite
 
@@ -72,14 +72,6 @@ run-hooks /usr/local/bin/start-notebook.d
 # (NB_USER).
 #
 if [ "$(id -u)" == 0 ] ; then
-    # Install docker_healthcheck.py if it was staged during build
-    if [ -f "/home/jovyan/docker_healthcheck.py" ]; then
-        mkdir -p /etc/jupyter
-        cp /home/jovyan/docker_healthcheck.py /etc/jupyter/docker_healthcheck.py
-        chmod +x /etc/jupyter/docker_healthcheck.py
-        rm /home/jovyan/docker_healthcheck.py
-    fi
-
     # Environment variables:
     # - NB_USER: the desired username and associated home folder
     # - NB_UID: the desired user id
